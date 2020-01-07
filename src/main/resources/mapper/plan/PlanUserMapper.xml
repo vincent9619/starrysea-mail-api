@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.starrysea.mail.plan.dao.PlanUserMapper">
+
+    <insert id="savePlanUser" parameterType="org.starrysea.mail.plan.entity.domain.PlanUser">
+        INSERT INTO mail_plan_user(
+            mail_plan_id,
+            user_id
+        )
+        VALUES
+        <foreach collection="list" item="item" separator=",">
+        (
+            #{item.mailPlanId},
+            #{item.userId}
+        )
+        </foreach>
+    </insert>
+
+    <select id="getAllPlanUser" parameterType="java.lang.Integer" resultType="org.starrysea.mail.plan.entity.vo.PlanUserListVO">
+        SELECT
+            u.user_email userEmail,
+            u.user_name userName
+        FROM
+            mail_plan_user mpu
+        INNER JOIN user u ON mpu.user_id = u.user_id
+        WHERE
+            mail_plan_id = #{mailPlanId}
+    </select>
+</mapper>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.starrysea.mail.plan.dao.PlanMapper">
+
+    <insert id="savePlan" parameterType="org.starrysea.mail.plan.entity.domain.Plan" useGeneratedKeys="true" keyColumn="mail_plan_id" keyProperty="mailPlanId">
+        INSERT INTO mail_plan(
+            mail_plan_id,
+            name,
+            template_id,
+            creator,
+            create_time,
+            status,
+            fail_reason,
+            finish_time
+        )
+        VALUES
+        (
+            #{mailPlanId},
+            #{name},
+            #{templateId},
+            #{creator},
+            #{createTime},
+            #{status.value},
+            #{failReason},
+            #{finishTime}
+        )
+    </insert>
+
+    <select id="getAllPlan" parameterType="org.starrysea.mail.plan.entity.qo.PlanListQO" resultType="org.starrysea.mail.plan.entity.vo.PlanListVO">
+        SELECT
+            mail_plan_id mailPlanId,
+            name name
+        FROM
+            mail_plan
+        WHERE
+            1 = 1
+        <if test="status != null">
+        AND
+            status = #{status.value}
+        </if>
+        <if test="createTime != null">
+        AND
+            create_time &lt;= #{createTime}
+        </if>
+        <if test="finishTime != null">
+        AND
+            finish_time &lt;= #{finishTime}
+        </if>
+        <if test="name != null and name != ''">
+        AND
+            name LIKE CONCAT('%',#{name},'%')
+        </if>
+    </select>
+
+    <select id="getPlan" parameterType="java.lang.Integer" resultType="org.starrysea.mail.plan.entity.vo.PlanDetailVO">
+        SELECT
+            mp.name name,
+            mt.name templateName,
+            mp.creator creator,
+            mp.create_time createTime,
+            mp.status status,
+            mp.fail_reason failReason,
+            mp.finish_time finishTime
+        FROM
+            mail_plan mp
+        INNER JOIN mail_template mt ON mp.template_id = mt.mail_template_id
+        WHERE
+            mp.mail_plan_id = #{mailPlanId}
+    </select>
+
+    <update id="updatePlanStatus" parameterType="org.starrysea.mail.plan.entity.domain.Plan">
+        UPDATE
+            mail_plan
+        SET
+            status = #{status.value},
+            fail_reason = #{failReason},
+            finish_time = #{finishTime}
+        WHERE
+            mail_plan_id = #{mailPlanId}
+    </update>
+</mapper>
