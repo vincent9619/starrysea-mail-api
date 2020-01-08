@@ -33,11 +33,11 @@
             mail_template
         WHERE
             1 = 1
-        <if test="status != null">
+        <if test="useNum != null">
         AND
             use_num = #{useNum}
         </if>
-        <if test="status != null">
+        <if test="mailDeleteStatus != null">
         AND
             is_delete = #{mailDeleteStatus.value}
         </if>
