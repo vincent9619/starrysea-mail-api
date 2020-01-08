@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.starrysea.mail.plan.dao.PlanMapper">
+
+    <insert id="saveMailTemplate" parameterType="org.starrysea.mail.mailTemplate.entity.domain.MailTemplate" useGeneratedKeys="true" keyColumn="mail_template_id" keyProperty="mailTemplateId">
+        INSERT INTO mail_template(
+            mail_template_id,
+            name,
+            path,
+            use_num,
+            is_delete,
+            creator,
+            create_time
+        )
+        VALUES
+        (
+            #{mailTemplateId},
+            #{name},
+            #{path},
+            #{useNum},
+            #{mailDeleteStatus.value},
+            #{creator},
+            #{createTime}
+        )
+    </insert>
+
+    <select id="getAllMailTemplate" parameterType="org.starrysea.mail.mailTemplate.entity.qo.MailTemplateQO" resultType="org.starrysea.mail.mailTemplate.entity.vo.MailTemplateListVO">
+        SELECT
+            mail_template_id mailTemplateId,
+            name name
+        FROM
+            mail_template
+        WHERE
+            1 = 1
+        <if test="useNum != null">
+        AND
+            use_num = #{useNum}
+        </if>
+        <if test="mailDeleteStatus != null">
+        AND
+            is_delete = #{mailDeleteStatus.value}
+        </if>
+        <if test="creator != null">
+        AND
+            creator = #{creator}
+        </if>
+        <if test="createTime != null">
+        AND
+            create_time &lt;= #{createTime}
+        </if>
+        <if test="name != null and name != ''">
+        AND
+            name LIKE CONCAT('%',#{name},'%')
+        </if>
+    </select>
+
+    <select id="getMailTemplate" parameterType="java.lang.Integer" resultType="org.starrysea.mail.mailTemplate.entity.vo.MailTemplateDetailVO">
+        SELECT
+            mt.name name,
+            mt.path path,
+            mt.use_num useNum,
+            mt.is_delete mailDeleteStatus,
+            mt.creator creator,
+            mt.create_time createTime
+        FROM
+            mail_template mt
+        WHERE
+            mt.mail_template_id = #{mailTemplateId}
+    </select>
+
+    <update id="updateMailDeleteStatus" parameterType="org.starrysea.mail.mailTemplate.entity.domain.MailTemplate">
+        UPDATE
+            mail_template
+        SET
+            is_delete = #{mailDeleteStatus.value},
+            path = #{path},
+            use_num = #{useNum}
+        WHERE
+            mail_template_id = #{mailTemplateId}
+    </update>
+</mapper>
