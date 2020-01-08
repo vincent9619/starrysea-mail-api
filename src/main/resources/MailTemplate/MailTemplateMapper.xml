@@ -41,7 +41,7 @@
         AND
             is_delete = #{mailDeleteStatus.value}
         </if>
-        <if test="finishTime != null">
+        <if test="creator != null">
         AND
             creator = #{creator}
         </if>
