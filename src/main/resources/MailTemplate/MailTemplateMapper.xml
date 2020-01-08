@@ -59,14 +59,14 @@
         SELECT
             mt.name name,
             mt.path path,
-            mp.use_num useNum,
-            mp.is_delete mailDeleteStatus,
-            mp.creator creator,
-            mp.create_time createTime
+            mt.use_num useNum,
+            mt.is_delete mailDeleteStatus,
+            mt.creator creator,
+            mt.create_time createTime
         FROM
             mail_template mt
         WHERE
-            mp.mail_template_id = #{mailTemplateId}
+            mt.mail_template_id = #{mailTemplateId}
     </select>
 
     <update id="updateMailDeleteStatus" parameterType="org.starrysea.mail.mailTemplate.entity.domain.MailTemplate">

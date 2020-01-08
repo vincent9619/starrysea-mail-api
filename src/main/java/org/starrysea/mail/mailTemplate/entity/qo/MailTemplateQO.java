@@ -4,6 +4,8 @@ package org.starrysea.mail.mailTemplate.entity.qo;
 import lombok.Data;
 import org.starrysea.mail.mailTemplate.entity.enums.MailDeleteStatus;
 
+import java.sql.Date;
+
 @Data
 public class MailTemplateQO {
 
@@ -11,5 +13,5 @@ public class MailTemplateQO {
     private Integer useNum;
     private MailDeleteStatus mailDeleteStatus;
     private String creator;
-    private Data createTime;
+    private Date createTime;
 }
