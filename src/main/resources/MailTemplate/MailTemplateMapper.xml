@@ -21,20 +21,20 @@
             #{useNum},
             #{mailDeleteStatus.value},
             #{creator},
-            #{createTime},
+            #{createTime}
         )
     </insert>
 
     <select id="getAllMailTemplate" parameterType="org.starrysea.mail.mailTemplate.entity.qo.MailTemplateQO" resultType="org.starrysea.mail.mailTemplate.entity.vo.MailTemplateListVO">
         SELECT
-        mail_template_id mailTemplateId,
+            mail_template_id mailTemplateId,
             name name
         FROM
             mail_template
         WHERE
             1 = 1
         <if test="status != null">
-            AND
+        AND
             use_num = #{useNum}
         </if>
         <if test="status != null">
@@ -42,8 +42,8 @@
             is_delete = #{mailDeleteStatus.value}
         </if>
         <if test="finishTime != null">
-            AND
-            creator &lt;= #{creator}
+        AND
+            creator = #{creator}
         </if>
         <if test="createTime != null">
         AND

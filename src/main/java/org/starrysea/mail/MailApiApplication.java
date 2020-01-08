@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @MapperScan("org.starrysea.**.mapper")
 public class MailApiApplication {
-    @RequestMapping("/Hello")
     public static void main(String[] args) {
         SpringApplication.run(MailApiApplication.class, args);
     }

@@ -3,8 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.starrysea.mail.plan.dao.PlanMapper">
 
-    <insert id="savePlan" parameterType="org.starrysea.mail.plan.entity.domain.Plan" useGeneratedKeys="true"
-            keyColumn="mail_plan_id" keyProperty="mailPlanId">
+    <insert id="savePlan" parameterType="org.starrysea.mail.plan.entity.domain.Plan" useGeneratedKeys="true" keyColumn="mail_plan_id" keyProperty="mailPlanId">
         INSERT INTO mail_plan(
             mail_plan_id,
             name,
@@ -28,25 +27,24 @@
         )
     </insert>
 
-    <select id="getAllPlan" parameterType="org.starrysea.mail.plan.entity.qo.PlanListQO"
-            resultType="org.starrysea.mail.plan.entity.vo.PlanListVO">
+    <select id="getAllPlan" parameterType="org.starrysea.mail.plan.entity.qo.PlanListQO" resultType="org.starrysea.mail.plan.entity.vo.PlanListVO">
         SELECT
-        mail_plan_id mailPlanId,
-        name name
+            mail_plan_id mailPlanId,
+            name name
         FROM
-        mail_plan
+            mail_plan
         WHERE
-        1 = 1
+            1 = 1
         <if test="status != null">
-            AND
+        AND
             status = #{status.value}
         </if>
         <if test="createTime != null">
-            AND
+        AND
             create_time &lt;= #{createTime}
         </if>
         <if test="finishTime != null">
-            AND
+        AND
             finish_time &lt;= #{finishTime}
         </if>
         <if test="name != null and name != ''">
