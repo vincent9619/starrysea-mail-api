@@ -27,4 +27,16 @@
         WHERE
             mail_plan_id = #{mailPlanId}
     </select>
+
+    <select id="getUserIdByEmail" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT
+            user_id userId
+        FROM
+            user
+        WHERE
+            user_email IN
+        <foreach collection="list" separator="," item="item" open="(" close=")">
+            #{item}
+        </foreach>
+    </select>
 </mapper>

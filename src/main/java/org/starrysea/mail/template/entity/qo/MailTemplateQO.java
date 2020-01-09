@@ -1,14 +1,15 @@
-package org.starrysea.mail.mailTemplate.entity.vo;
+package org.starrysea.mail.template.entity.qo;
+
 
 import lombok.Data;
-import org.starrysea.mail.mailTemplate.entity.enums.MailDeleteStatus;
+import org.starrysea.mail.template.entity.enums.MailDeleteStatus;
 
 import java.sql.Date;
 
 @Data
-public class MailTemplateDetailVO {
+public class MailTemplateQO {
+
     private String name;
-    private String path;
     private Integer useNum;
     private MailDeleteStatus mailDeleteStatus;
     private String creator;

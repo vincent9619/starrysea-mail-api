@@ -3,11 +3,13 @@ package org.starrysea.mail;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@MapperScan("org.starrysea.**.mapper")
+@MapperScan("org.starrysea.**.dao")
+@EnableTransactionManagement
 public class MailApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(MailApiApplication.class, args);

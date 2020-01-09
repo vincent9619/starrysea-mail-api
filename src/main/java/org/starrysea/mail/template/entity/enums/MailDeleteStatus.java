@@ -1,4 +1,4 @@
-package org.starrysea.mail.mailTemplate.entity.enums;
+package org.starrysea.mail.template.entity.enums;
 
 public enum MailDeleteStatus {
 

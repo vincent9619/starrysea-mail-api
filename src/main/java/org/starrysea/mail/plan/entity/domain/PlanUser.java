@@ -7,5 +7,5 @@ public class PlanUser {
 
     private Integer mailPlanUserId;
     private Integer mailPlanId;
-    private Integer userId;
+    private String userId;
 }

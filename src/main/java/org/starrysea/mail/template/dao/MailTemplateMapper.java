@@ -1,9 +1,9 @@
-package org.starrysea.mail.mailTemplate.dao;
+package org.starrysea.mail.template.dao;
 
 
-import org.starrysea.mail.mailTemplate.entity.qo.MailTemplateQO;
-import org.starrysea.mail.mailTemplate.entity.vo.MailTemplateDetailVO;
-import org.starrysea.mail.mailTemplate.entity.vo.MailTemplateListVO;
+import org.starrysea.mail.template.entity.qo.MailTemplateQO;
+import org.starrysea.mail.template.entity.vo.MailTemplateDetailVO;
+import org.starrysea.mail.template.entity.vo.MailTemplateListVO;
 import org.starrysea.mail.plan.entity.domain.Plan;
 
 import java.util.List;

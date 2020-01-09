@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.starrysea.mail.plan.dao.PlanMapper">
 
-    <insert id="saveMailTemplate" parameterType="org.starrysea.mail.mailTemplate.entity.domain.MailTemplate" useGeneratedKeys="true" keyColumn="mail_template_id" keyProperty="mailTemplateId">
+    <insert id="saveMailTemplate" parameterType="org.starrysea.mail.template.entity.domain.MailTemplate" useGeneratedKeys="true" keyColumn="mail_template_id" keyProperty="mailTemplateId">
         INSERT INTO mail_template(
             mail_template_id,
             name,
@@ -25,7 +25,7 @@
         )
     </insert>
 
-    <select id="getAllMailTemplate" parameterType="org.starrysea.mail.mailTemplate.entity.qo.MailTemplateQO" resultType="org.starrysea.mail.mailTemplate.entity.vo.MailTemplateListVO">
+    <select id="getAllMailTemplate" parameterType="org.starrysea.mail.template.entity.qo.MailTemplateQO" resultType="org.starrysea.mail.template.entity.vo.MailTemplateListVO">
         SELECT
             mail_template_id mailTemplateId,
             name name
@@ -55,7 +55,7 @@
         </if>
     </select>
 
-    <select id="getMailTemplate" parameterType="java.lang.Integer" resultType="org.starrysea.mail.mailTemplate.entity.vo.MailTemplateDetailVO">
+    <select id="getMailTemplate" parameterType="java.lang.Integer" resultType="org.starrysea.mail.template.entity.vo.MailTemplateDetailVO">
         SELECT
             mt.name name,
             mt.path path,
@@ -69,7 +69,7 @@
             mt.mail_template_id = #{mailTemplateId}
     </select>
 
-    <update id="updateMailDeleteStatus" parameterType="org.starrysea.mail.mailTemplate.entity.domain.MailTemplate">
+    <update id="updateMailDeleteStatus" parameterType="org.starrysea.mail.template.entity.domain.MailTemplate">
         UPDATE
             mail_template
         SET
