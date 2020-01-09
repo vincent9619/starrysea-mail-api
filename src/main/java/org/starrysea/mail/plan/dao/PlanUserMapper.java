@@ -10,4 +10,6 @@ public interface PlanUserMapper {
     void savePlanUser(List<PlanUser> planUserList);
 
     List<PlanUserListVO> getAllPlanUser(Integer mailPlanId);
+
+    List<String> getUserIdByEmail(List<String> emailList);
 }

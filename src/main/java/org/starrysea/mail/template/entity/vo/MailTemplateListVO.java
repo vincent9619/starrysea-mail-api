@@ -1,7 +1,7 @@
-package org.starrysea.mail.mailTemplate.entity.vo;
+package org.starrysea.mail.template.entity.vo;
 
 import lombok.Data;
-import org.starrysea.mail.mailTemplate.entity.enums.MailDeleteStatus;
+
 @Data
 public class MailTemplateListVO {
     private Integer mailTemplateId;
