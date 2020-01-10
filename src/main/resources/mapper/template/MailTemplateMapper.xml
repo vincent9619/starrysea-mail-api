@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.starrysea.mail.plan.dao.PlanMapper">
+<mapper namespace="org.starrysea.mail.template.dao.MailTemplateMapper">
 
     <insert id="saveMailTemplate" parameterType="org.starrysea.mail.template.entity.domain.MailTemplate" useGeneratedKeys="true" keyColumn="mail_template_id" keyProperty="mailTemplateId">
         INSERT INTO mail_template(
@@ -69,13 +69,11 @@
             mt.mail_template_id = #{mailTemplateId}
     </select>
 
-    <update id="updateMailDeleteStatus" parameterType="org.starrysea.mail.template.entity.domain.MailTemplate">
+    <update id="updateMailTemplate" parameterType="org.starrysea.mail.template.entity.domain.MailTemplate">
         UPDATE
             mail_template
         SET
-            is_delete = #{mailDeleteStatus.value},
-            path = #{path},
-            use_num = #{useNum}
+            path = #{path}
         WHERE
             mail_template_id = #{mailTemplateId}
     </update>
