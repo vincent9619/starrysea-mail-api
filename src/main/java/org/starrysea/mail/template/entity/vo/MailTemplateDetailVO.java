@@ -10,7 +10,8 @@ public class MailTemplateDetailVO {
     private String name;
     private String path;
     private Integer useNum;
-    private MailDeleteStatus mailDeleteStatus;
+    //private MailDeleteStatus mailDeleteStatus;
+    private String mailDeleteStatus;
     private String creator;
     private Date createTime;
 }

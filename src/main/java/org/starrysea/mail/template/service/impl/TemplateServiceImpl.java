@@ -29,7 +29,7 @@ public class TemplateServiceImpl implements TemplateService {
 
     @Override
     public List<MailTemplateListVO> getAllMailTemplate(MailTemplateQO mailTemplateQO) {
-        return getAllMailTemplate(mailTemplateQO);
+        return mailTemplateMapper.getAllMailTemplate(mailTemplateQO);
     }
 
     @Override

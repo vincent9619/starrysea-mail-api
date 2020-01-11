@@ -2,7 +2,7 @@ package org.starrysea.mail.template.entity.enums;
 
 public enum MailDeleteStatus {
 
-    NOT_DELETE("0","未删除"),
+    NOT_DELETE("0", "未删除"),
     IS_DELETE("1", "已删除");
 
 

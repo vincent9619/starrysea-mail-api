@@ -23,7 +23,7 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Slf4j
-public class templateServiceTests {
+public class TemplateServiceTests {
     @Autowired
     private TemplateService templateService;
     @Test
@@ -37,7 +37,7 @@ public class templateServiceTests {
     @Test
     public void getAllMailTemplate() {
         MailTemplateQO mailTemplateQO = new MailTemplateQO();
-        mailTemplateQO.setName("柚子");
+        mailTemplateQO.setName("千恋万花邮件模板");
         mailTemplateQO.setMailDeleteStatus(MailDeleteStatus.NOT_DELETE);
         mailTemplateQO.setCreateTime(new Date());
         mailTemplateQO.setUseNum(0);

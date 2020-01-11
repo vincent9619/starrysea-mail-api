@@ -5,7 +5,7 @@ import org.starrysea.mail.template.entity.domain.MailTemplate;
 import org.starrysea.mail.template.entity.qo.MailTemplateQO;
 import org.starrysea.mail.template.entity.vo.MailTemplateDetailVO;
 import org.starrysea.mail.template.entity.vo.MailTemplateListVO;
-import org.starrysea.mail.plan.entity.domain.Plan;
+
 
 import java.util.List;
 
