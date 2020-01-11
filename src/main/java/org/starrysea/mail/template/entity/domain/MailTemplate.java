@@ -3,7 +3,8 @@ package org.starrysea.mail.template.entity.domain;
 import lombok.Data;
 import org.starrysea.mail.template.entity.enums.MailDeleteStatus;
 
-import java.sql.Date;
+import java.util.Date;
+
 @Data
 public class MailTemplate {
     private Integer mailTemplateId;
