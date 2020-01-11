@@ -19,8 +19,7 @@ public class AddTemplateDTO {
         mailTemplate.setCreator("柚子大神");
         mailTemplate.setCreateTime(new Date());
         mailTemplate.setUseNum(0);
-        //mailTemplate.setMailDeleteStatus(MailDeleteStatus.NOT_DELETE);
-        mailTemplate.setMailDeleteStatus("NOT_DELETE");
+        mailTemplate.setMailDeleteStatus(MailDeleteStatus.NOT_DELETE);
         return mailTemplate;
     }
 

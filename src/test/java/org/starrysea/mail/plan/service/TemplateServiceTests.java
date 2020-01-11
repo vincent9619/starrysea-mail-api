@@ -6,9 +6,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.starrysea.mail.plan.entity.enums.PlanStatus;
-import org.starrysea.mail.plan.entity.qo.PlanListQO;
-import org.starrysea.mail.plan.entity.vo.PlanListVO;
 import org.starrysea.mail.template.entity.domain.MailTemplate;
 import org.starrysea.mail.template.entity.dto.AddTemplateDTO;
 import org.starrysea.mail.template.entity.enums.MailDeleteStatus;
@@ -29,8 +26,8 @@ public class TemplateServiceTests {
     @Test
     public void addMailTemplate(){
         AddTemplateDTO addTemplateDTO = new AddTemplateDTO();
-        addTemplateDTO.setName("千恋万花邮件模板");
-        addTemplateDTO.setPath("柚子社");
+        addTemplateDTO.setName("千恋万花邮件模板2");
+        addTemplateDTO.setPath("柚子社2");
         templateService.addMailTemplate(addTemplateDTO);
     }
 
@@ -57,7 +54,7 @@ public class TemplateServiceTests {
         MailTemplate mailTemplate = new MailTemplate();
         mailTemplate.setMailTemplateId(2);
         mailTemplate.setPath("新岛夕");
-        templateService.rewriteMailTemplate(mailTemplate);
+        templateService.editMailTemplate(mailTemplate);
 
     }
 

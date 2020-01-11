@@ -34,12 +34,11 @@ public class TemplateServiceImpl implements TemplateService {
 
     @Override
     public MailTemplateDetailVO getMailTemplate(Integer mailTemplateId) {
-        MailTemplateDetailVO mailTemplateDetailVO = mailTemplateMapper.getMailTemplate(mailTemplateId);
-        return mailTemplateDetailVO;
+        return mailTemplateMapper.getMailTemplate(mailTemplateId);
     }
 
     @Override
-    public void rewriteMailTemplate(MailTemplate mailTemplate) {
+    public void editMailTemplate(MailTemplate mailTemplate) {
         mailTemplateMapper.updateMailTemplate(mailTemplate);
     }
 }

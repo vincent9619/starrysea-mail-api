@@ -11,8 +11,7 @@ public class MailTemplate {
     private String name;
     private String path;
     private Integer useNum;
-    //private MailDeleteStatus mailDeleteStatus;
-    private String mailDeleteStatus;
+    private MailDeleteStatus mailDeleteStatus;
     private String creator;
     private Date createTime;
 }

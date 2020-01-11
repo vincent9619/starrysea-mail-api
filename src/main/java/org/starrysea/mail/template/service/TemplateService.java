@@ -15,7 +15,7 @@ public interface TemplateService {
 
     MailTemplateDetailVO getMailTemplate(Integer mailTemplateId);
 
-    void rewriteMailTemplate(MailTemplate mailTemplate);
+    void editMailTemplate(MailTemplate mailTemplate);
 
 
 }
