@@ -8,9 +8,6 @@ import com.github.pagehelper.PageInfo;
 import org.starrysea.mail.common.entity.dto.PageQueryInfo;
 import org.starrysea.mail.common.entity.vo.ListDataWithPageInfo;
 
-import java.util.List;
-import java.util.function.Supplier;
-
 public class PageQueryUtils {
 
     public static <T> ListDataWithPageInfo<T> pageQuery(PageQueryInfo pageQueryInfo, ISelect select) {
