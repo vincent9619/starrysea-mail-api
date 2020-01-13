@@ -1,5 +1,6 @@
 package org.starrysea.mail.plan.service;
 
+import com.github.pagehelper.PageHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,6 +40,7 @@ public class PlanServiceTests {
         planListQO.setName("推广");
         planListQO.setStatus(PlanStatus.NOT_RUN);
         planListQO.setCreateTime(new Date());
+        PageHelper.startPage(1, 1);
         List<PlanListVO> planListVOList = planService.getAllPlan(planListQO);
         log.error(planListVOList.toString());
     }
