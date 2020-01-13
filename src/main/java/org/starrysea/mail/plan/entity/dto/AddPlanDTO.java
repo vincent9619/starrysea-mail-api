@@ -6,6 +6,9 @@ import org.starrysea.mail.plan.entity.domain.Plan;
 import org.starrysea.mail.plan.entity.domain.PlanUser;
 import org.starrysea.mail.plan.entity.enums.PlanStatus;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,8 +16,11 @@ import java.util.stream.Collectors;
 @Data
 public class AddPlanDTO {
 
+    @NotBlank(message = "推广计划的名称不能为空")
     private String name;
+    @NotNull(message = "推广计划的邮件模板id不能为空")
     private Integer templateId;
+    @NotEmpty(message = "推广计划的收件人邮箱集合不能为空")
     private List<String> emailList;
 
     public Plan toDomain() {
