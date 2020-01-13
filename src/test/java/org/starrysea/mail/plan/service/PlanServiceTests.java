@@ -7,6 +7,9 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.starrysea.mail.common.util.PageQueryUtils;
+import org.starrysea.mail.common.entity.dto.PageQueryInfo;
+import org.starrysea.mail.common.entity.vo.ListDataWithPageInfo;
 import org.starrysea.mail.plan.entity.dto.AddPlanDTO;
 import org.starrysea.mail.plan.entity.enums.PlanStatus;
 import org.starrysea.mail.plan.entity.qo.PlanListQO;
@@ -15,7 +18,6 @@ import org.starrysea.mail.plan.entity.vo.PlanListVO;
 
 import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -41,7 +43,10 @@ public class PlanServiceTests {
         planListQO.setStatus(PlanStatus.NOT_RUN);
         planListQO.setCreateTime(new Date());
         PageHelper.startPage(1, 1);
-        List<PlanListVO> planListVOList = planService.getAllPlan(planListQO);
+        PageQueryInfo pageQueryInfo = new PageQueryInfo();
+        pageQueryInfo.setPageSize(1);
+        pageQueryInfo.setPageNum(1);
+        ListDataWithPageInfo<PlanListVO> planListVOList = PageQueryUtils.pageQuery(pageQueryInfo, () -> planService.getAllPlan(planListQO));
         log.error(planListVOList.toString());
     }
 
