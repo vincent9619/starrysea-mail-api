@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-	<property name="INFO_LOG_HOME" value="/root/log/starrysea/info" />
-	<property name="ERROR_LOG_HOME" value="/root/log/starrysea/error" />
+	<property name="INFO_LOG_HOME" value="log/starrysea/info" />
+	<property name="ERROR_LOG_HOME" value="log/starrysea/error" />
 	<appender name="INFOFILE"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -33,7 +33,7 @@
 	<root level="INFO">
 		<appender-ref ref="INFOFILE" />
 	</root>
-	<logger name="top.starrysea" level="WARN">
+	<logger name="org.starrysea" level="WARN">
 		<appender-ref ref="ERRORFILE" />
 	</logger>
 </configuration>

@@ -11,7 +11,7 @@
 	<logger name="org.eclipse.jetty" level="INFO">
 		<appender-ref ref="STDOUT" />
 	</logger>
-	<logger name="top.starrysea" level="DEBUG">
+	<logger name="org.starrysea" level="DEBUG">
 		<appender-ref ref="STDOUT" />
 	</logger>
 </configuration>
