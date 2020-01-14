@@ -49,13 +49,5 @@ public class TemplateServiceTests {
 
     }
 
-    @Test
-    public void rewriteMailTemplate(){
-        MailTemplate mailTemplate = new MailTemplate();
-        mailTemplate.setMailTemplateId(2);
-        mailTemplate.setPath("新岛夕");
-        templateService.editMailTemplate(mailTemplate);
-
-    }
 
 }
