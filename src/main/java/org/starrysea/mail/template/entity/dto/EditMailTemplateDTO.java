@@ -1,5 +1,6 @@
 package org.starrysea.mail.template.entity.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.starrysea.mail.template.entity.domain.MailTemplate;
 import org.starrysea.mail.template.entity.enums.MailDeleteStatus;
@@ -11,7 +12,7 @@ import java.util.Date;
 
 @Data
 public class EditMailTemplateDTO {
-    @NotNull(message = "邮件模板的id不能为空")
+    @JsonIgnore
     private Integer mailTemplateId;
     @NotBlank(message = "邮件模板的地址不能为空")
     private String path;
