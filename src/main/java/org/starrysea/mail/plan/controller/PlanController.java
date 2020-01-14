@@ -16,7 +16,7 @@ import org.starrysea.mail.plan.service.PlanService;
 import javax.validation.Valid;
 
 @RestController
-@Api("推广计划")
+@Api(value = "推广计划", tags = "推广计划")
 public class PlanController {
 
     @Autowired
