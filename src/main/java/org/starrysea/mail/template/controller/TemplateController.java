@@ -44,7 +44,7 @@ public class TemplateController {
 
     @PostMapping("/template/{mailTemplateId}}")
     @ApiOperation("修改一个邮件模板")
-    public String editMailTemplate( @PathVariable("mailTemplateId") Integer mailTemplateId, @RequestBody EditMailTemplateDTO editMailTemplateDTO) {
+    public String editMailTemplate( @PathVariable("mailTemplateId") Integer mailTemplateId, @RequestBody @Valid EditMailTemplateDTO editMailTemplateDTO) {
         editMailTemplateDTO.setMailTemplateId(mailTemplateId);
         templateService.editMailTemplate(editMailTemplateDTO);
         return "修改邮件模板成功";
