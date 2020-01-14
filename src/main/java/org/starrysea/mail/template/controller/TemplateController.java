@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import org.starrysea.mail.common.entity.dto.PageQueryInfo;
 import org.starrysea.mail.common.entity.vo.ListDataWithPageInfo;
 import org.starrysea.mail.common.util.PageQueryUtils;
-import org.starrysea.mail.template.entity.domain.UpdateMailTemplate;
 import org.starrysea.mail.template.entity.dto.AddTemplateDTO;
+import org.starrysea.mail.template.entity.dto.UpdateMailTemplateDTO;
 import org.starrysea.mail.template.entity.qo.MailTemplateQO;
 import org.starrysea.mail.template.entity.vo.MailTemplateDetailVO;
 import org.starrysea.mail.template.entity.vo.MailTemplateListVO;
@@ -44,8 +44,8 @@ public class TemplateController {
 
     @PostMapping("/template/edit")
     @ApiOperation("修改一个邮件模板")
-    public String editMailTemplate(UpdateMailTemplate updateMailTemplate) {
-        templateService.editMailTemplate(updateMailTemplate);
+    public String editMailTemplate(@RequestBody @Valid UpdateMailTemplateDTO updateMailTemplateDTO) {
+        templateService.editMailTemplate(updateMailTemplateDTO);
         return "修改邮件模板成功";
     }
 }

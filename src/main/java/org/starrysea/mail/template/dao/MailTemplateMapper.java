@@ -2,7 +2,7 @@ package org.starrysea.mail.template.dao;
 
 
 import org.starrysea.mail.template.entity.domain.MailTemplate;
-import org.starrysea.mail.template.entity.domain.UpdateMailTemplate;
+
 import org.starrysea.mail.template.entity.qo.MailTemplateQO;
 import org.starrysea.mail.template.entity.vo.MailTemplateDetailVO;
 import org.starrysea.mail.template.entity.vo.MailTemplateListVO;
@@ -17,5 +17,5 @@ public interface MailTemplateMapper {
 
     MailTemplateDetailVO getMailTemplate(Integer mailTemplateId);
 
-    void updateMailTemplate(UpdateMailTemplate updateMailTemplate);
+    void updateMailTemplate(MailTemplate mailTemplate);
 }

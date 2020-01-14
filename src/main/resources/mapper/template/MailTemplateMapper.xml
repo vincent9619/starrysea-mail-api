@@ -69,7 +69,7 @@
             mt.mail_template_id = #{mailTemplateId}
     </select>
 
-    <update id="updateMailTemplate" parameterType="org.starrysea.mail.template.entity.domain.UpdateMailTemplate">
+    <update id="updateMailTemplate" parameterType="org.starrysea.mail.template.entity.domain.MailTemplate">
         UPDATE
             mail_template
         SET

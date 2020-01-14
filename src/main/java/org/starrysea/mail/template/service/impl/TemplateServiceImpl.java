@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.starrysea.mail.template.dao.MailTemplateMapper;
 import org.starrysea.mail.template.entity.domain.MailTemplate;
-import org.starrysea.mail.template.entity.domain.UpdateMailTemplate;
 import org.starrysea.mail.template.entity.dto.AddTemplateDTO;
+import org.starrysea.mail.template.entity.dto.UpdateMailTemplateDTO;
 import org.starrysea.mail.template.entity.qo.MailTemplateQO;
 import org.starrysea.mail.template.entity.vo.MailTemplateDetailVO;
 import org.starrysea.mail.template.entity.vo.MailTemplateListVO;
@@ -39,7 +39,8 @@ public class TemplateServiceImpl implements TemplateService {
     }
 
     @Override
-    public void editMailTemplate(UpdateMailTemplate updateMailTemplate) {
-        mailTemplateMapper.updateMailTemplate(updateMailTemplate);
+    public void editMailTemplate(UpdateMailTemplateDTO updateMailTemplateDTO) {
+        MailTemplate mailTemplate = updateMailTemplateDTO.toDomain();
+        mailTemplateMapper.updateMailTemplate(mailTemplate);
     }
 }
