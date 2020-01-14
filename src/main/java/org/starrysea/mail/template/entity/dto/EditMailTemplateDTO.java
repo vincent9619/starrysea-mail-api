@@ -8,7 +8,7 @@ import org.starrysea.mail.template.entity.enums.MailDeleteStatus;
 import java.util.Date;
 
 @Data
-public class UpdateMailTemplateDTO {
+public class EditMailTemplateDTO {
     private Integer mailTemplateId;
     private String path;
 

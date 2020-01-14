@@ -1,7 +1,7 @@
 package org.starrysea.mail.template.service;
 
 import org.starrysea.mail.template.entity.dto.AddTemplateDTO;
-import org.starrysea.mail.template.entity.dto.UpdateMailTemplateDTO;
+import org.starrysea.mail.template.entity.dto.EditMailTemplateDTO;
 import org.starrysea.mail.template.entity.qo.MailTemplateQO;
 import org.starrysea.mail.template.entity.vo.MailTemplateDetailVO;
 import org.starrysea.mail.template.entity.vo.MailTemplateListVO;
@@ -15,7 +15,7 @@ public interface TemplateService {
 
     MailTemplateDetailVO getMailTemplate(Integer mailTemplateId);
 
-    void editMailTemplate(UpdateMailTemplateDTO updateMailTemplateDTO);
+    void editMailTemplate(EditMailTemplateDTO editMailTemplateDTO);
 
 
 }

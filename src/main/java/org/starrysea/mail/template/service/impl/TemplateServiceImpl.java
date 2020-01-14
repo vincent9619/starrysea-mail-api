@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.starrysea.mail.template.dao.MailTemplateMapper;
 import org.starrysea.mail.template.entity.domain.MailTemplate;
 import org.starrysea.mail.template.entity.dto.AddTemplateDTO;
-import org.starrysea.mail.template.entity.dto.UpdateMailTemplateDTO;
+import org.starrysea.mail.template.entity.dto.EditMailTemplateDTO;
 import org.starrysea.mail.template.entity.qo.MailTemplateQO;
 import org.starrysea.mail.template.entity.vo.MailTemplateDetailVO;
 import org.starrysea.mail.template.entity.vo.MailTemplateListVO;
@@ -24,8 +24,8 @@ public class TemplateServiceImpl implements TemplateService {
     @Override
     @Transactional
     public void addMailTemplate(AddTemplateDTO addTemplateDTO) {
-        MailTemplate mailTemplate = addTemplateDTO.toDomain();
-        mailTemplateMapper.saveMailTemplate(mailTemplate);
+        //MailTemplate mailTemplate = addTemplateDTO.toDomain();
+        mailTemplateMapper.saveMailTemplate(addTemplateDTO.toDomain());
     }
 
     @Override
@@ -39,8 +39,8 @@ public class TemplateServiceImpl implements TemplateService {
     }
 
     @Override
-    public void editMailTemplate(UpdateMailTemplateDTO updateMailTemplateDTO) {
-        MailTemplate mailTemplate = updateMailTemplateDTO.toDomain();
-        mailTemplateMapper.updateMailTemplate(mailTemplate);
+    public void editMailTemplate(EditMailTemplateDTO editMailTemplateDTO) {
+        //MailTemplate mailTemplate = editMailTemplateDTO.toDomain();
+        mailTemplateMapper.updateMailTemplate(editMailTemplateDTO.toDomain());
     }
 }
