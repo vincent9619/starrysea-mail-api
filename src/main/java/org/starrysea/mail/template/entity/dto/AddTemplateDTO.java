@@ -16,7 +16,7 @@ public class AddTemplateDTO {
         MailTemplate mailTemplate = new MailTemplate();
         mailTemplate.setName(name);
         mailTemplate.setPath(path);
-        mailTemplate.setCreator("柚子大神");
+        mailTemplate.setCreator("柚子大神kuma");
         mailTemplate.setCreateTime(new Date());
         mailTemplate.setUseNum(0);
         mailTemplate.setMailDeleteStatus(MailDeleteStatus.NOT_DELETE);
