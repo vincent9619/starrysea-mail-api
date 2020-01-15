@@ -1,7 +1,7 @@
 package org.starrysea.mail.template.entity.vo;
 
 import lombok.Data;
-import org.starrysea.mail.template.entity.enums.MailDeleteStatus;
+
 
 import java.sql.Date;
 

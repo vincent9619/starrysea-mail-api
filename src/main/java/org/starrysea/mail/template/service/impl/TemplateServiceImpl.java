@@ -24,7 +24,6 @@ public class TemplateServiceImpl implements TemplateService {
     @Override
     @Transactional
     public void addMailTemplate(AddTemplateDTO addTemplateDTO) {
-        //MailTemplate mailTemplate = addTemplateDTO.toDomain();
         mailTemplateMapper.saveMailTemplate(addTemplateDTO.toDomain());
     }
 
@@ -40,7 +39,6 @@ public class TemplateServiceImpl implements TemplateService {
 
     @Override
     public void editMailTemplate(EditMailTemplateDTO editMailTemplateDTO) {
-        //MailTemplate mailTemplate = editMailTemplateDTO.toDomain();
         mailTemplateMapper.updateMailTemplate(editMailTemplateDTO.toDomain());
     }
 }
