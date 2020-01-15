@@ -21,7 +21,6 @@ public class BaseClientDetailService implements ClientDetailsService {
         BaseClientDetails client = null;
         //这里可以改为查询数据库
         if ("client".equals(clientId)) {
-            log.info(clientId);
             client = new BaseClientDetails();
             client.setClientId(clientId);
             client.setClientSecret("{noop}123456");
@@ -33,7 +32,7 @@ public class BaseClientDetailService implements ClientDetailsService {
             client.setAccessTokenValiditySeconds((int) TimeUnit.DAYS.toSeconds(1)); //1天
             client.setRefreshTokenValiditySeconds((int) TimeUnit.DAYS.toSeconds(1)); //1天
             Set<String> uris = new HashSet<>();
-            uris.add("http://localhost:8080/login");
+            uris.add("http://localhost:10010");
             client.setRegisteredRedirectUri(uris);
         }
         if (client == null) {
