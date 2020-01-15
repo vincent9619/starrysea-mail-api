@@ -8,5 +8,16 @@ spring:
     url: jdbc:mysql://120.79.145.235:3306/ss_test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
     username: root
     password: root1
+  redis:
+    host: 120.79.145.235
+    port: 6379
+    password: root1
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: 1800
+        max-idle: 8
+        min-idle: 0
+    timeout: 20000
 mybatis:
   mapper-locations: classpath*:mapper/*.xml,classpath*:mapper/**/*.xml
