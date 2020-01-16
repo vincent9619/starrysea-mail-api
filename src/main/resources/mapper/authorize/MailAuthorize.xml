@@ -5,7 +5,7 @@
 
     <select id="getMailAuthorize" parameterType="java.lang.String" resultType="java.lang.String">
         SELECT
-            ma.client_secret clientSecret,
+            ma.client_secret clientSecret
         FROM
             mail_authorize ma
         WHERE

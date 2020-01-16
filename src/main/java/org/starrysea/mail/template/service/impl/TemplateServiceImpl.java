@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.starrysea.mail.template.dao.MailTemplateMapper;
-import org.starrysea.mail.template.entity.domain.MailTemplate;
 import org.starrysea.mail.template.entity.dto.AddTemplateDTO;
 import org.starrysea.mail.template.entity.dto.EditMailTemplateDTO;
 import org.starrysea.mail.template.entity.qo.MailTemplateQO;

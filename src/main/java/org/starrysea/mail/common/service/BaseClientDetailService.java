@@ -8,9 +8,8 @@ import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.ClientRegistrationException;
 import org.springframework.security.oauth2.provider.NoSuchClientException;
 import org.springframework.security.oauth2.provider.client.BaseClientDetails;
+import org.springframework.stereotype.Component;
 import org.starrysea.mail.common.config.AuthorizationServerConfiguration;
-import org.starrysea.mail.common.dao.MailAuthorizeMapper;
-import org.starrysea.mail.common.entity.vo.MailAuthorizeDetailVO;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -18,8 +17,10 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
+@Component
 public class BaseClientDetailService implements ClientDetailsService {
-   private AuthorizationServerConfiguration authorizationServerConfiguration = new AuthorizationServerConfiguration();
+    @Autowired
+    private AuthorizationServerConfiguration authorizationServerConfiguration;
 
     @Override
     public ClientDetails loadClientByClientId(String clientId) throws ClientRegistrationException {

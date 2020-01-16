@@ -30,7 +30,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     @Autowired
     private MailAuthorizeMapper mailAuthorizeMapper;
 
-    public String getMailAuthorizeSecret(String clientId){
+   public String getMailAuthorizeSecret(String clientId){
         return mailAuthorizeMapper.getMailAuthorize(clientId);
     }
 
