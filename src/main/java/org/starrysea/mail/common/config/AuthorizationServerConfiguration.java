@@ -12,6 +12,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
+import org.starrysea.mail.common.dao.MailAuthorizeMapper;
 import org.starrysea.mail.common.service.BaseClientDetailService;
 
 import java.util.concurrent.TimeUnit;

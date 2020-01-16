@@ -3,6 +3,7 @@ package org.starrysea.mail.template.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.starrysea.mail.common.entity.dto.PageQueryInfo;
 import org.starrysea.mail.common.entity.vo.ListDataWithPageInfo;
@@ -18,6 +19,7 @@ import javax.validation.Valid;
 
 @RestController
 @Api(value = "邮件模板", tags = "邮件模板")
+@PreAuthorize("hasAnyAuthority('admin_role')")
 public class TemplateController {
 
     @Autowired
@@ -42,11 +44,12 @@ public class TemplateController {
         return templateService.getMailTemplate(mailTemplateId);
     }
 
-    @PostMapping("/template/{mailTemplateId}}")
+    @PostMapping("/template/{mailTemplateId}")
     @ApiOperation("修改一个邮件模板")
     public String editMailTemplate( @PathVariable("mailTemplateId") Integer mailTemplateId, @RequestBody @Valid EditMailTemplateDTO editMailTemplateDTO) {
         editMailTemplateDTO.setMailTemplateId(mailTemplateId);
         templateService.editMailTemplate(editMailTemplateDTO);
         return "修改邮件模板成功";
     }
+
 }
