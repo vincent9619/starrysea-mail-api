@@ -30,7 +30,7 @@ public class BaseClientDetailService implements ClientDetailsService {
         BaseClientDetails client = null;
         //这里可以改为查询数据库
             client = new BaseClientDetails();
-            client.setClientId("client");
+            client.setClientId(clientId);
             client.setClientSecret("{noop}"+mailAuthorizeMapper.getMailAuthorize(clientId));
             //client.setResourceIds(Arrays.asList("order"));
             client.setAuthorizedGrantTypes(Arrays.asList("authorization_code", "client_credentials", "refresh_token", "password", "implicit"));
