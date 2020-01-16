@@ -10,6 +10,7 @@ import org.springframework.security.oauth2.provider.NoSuchClientException;
 import org.springframework.security.oauth2.provider.client.BaseClientDetails;
 import org.springframework.stereotype.Component;
 import org.starrysea.mail.common.config.AuthorizationServerConfiguration;
+import org.starrysea.mail.common.dao.MailAuthorizeMapper;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -19,8 +20,10 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @Component
 public class BaseClientDetailService implements ClientDetailsService {
+
     @Autowired
-    private AuthorizationServerConfiguration authorizationServerConfiguration;
+    private MailAuthorizeMapper mailAuthorizeMapper;
+
 
     @Override
     public ClientDetails loadClientByClientId(String clientId) throws ClientRegistrationException {
@@ -30,7 +33,7 @@ public class BaseClientDetailService implements ClientDetailsService {
             client = new BaseClientDetails();
             client.setClientId(clientId);
             //client.setClientSecret("{noop}123456");
-            client.setClientSecret("{noop}"+authorizationServerConfiguration.getMailAuthorizeSecret(clientId));
+            client.setClientSecret("{noop}"+mailAuthorizeMapper.getMailAuthorize(clientId));
             //client.setResourceIds(Arrays.asList("order"));
             client.setAuthorizedGrantTypes(Arrays.asList("authorization_code", "client_credentials", "refresh_token", "password", "implicit"));
             //不同的client可以通过 一个scope 对应 权限集

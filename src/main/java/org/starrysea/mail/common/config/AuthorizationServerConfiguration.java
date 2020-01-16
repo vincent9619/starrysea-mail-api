@@ -27,13 +27,6 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @Autowired
-    private MailAuthorizeMapper mailAuthorizeMapper;
-
-   public String getMailAuthorizeSecret(String clientId){
-        return mailAuthorizeMapper.getMailAuthorize(clientId);
-    }
-
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.withClientDetails(new BaseClientDetailService());
