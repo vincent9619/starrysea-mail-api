@@ -29,10 +29,8 @@ public class BaseClientDetailService implements ClientDetailsService {
     public ClientDetails loadClientByClientId(String clientId) throws ClientRegistrationException {
         BaseClientDetails client = null;
         //这里可以改为查询数据库
-        if ("client".equals(clientId)) {
             client = new BaseClientDetails();
-            client.setClientId(clientId);
-            //client.setClientSecret("{noop}123456");
+            client.setClientId("client");
             client.setClientSecret("{noop}"+mailAuthorizeMapper.getMailAuthorize(clientId));
             //client.setResourceIds(Arrays.asList("order"));
             client.setAuthorizedGrantTypes(Arrays.asList("authorization_code", "client_credentials", "refresh_token", "password", "implicit"));
@@ -44,7 +42,6 @@ public class BaseClientDetailService implements ClientDetailsService {
             Set<String> uris = new HashSet<>();
             uris.add("http://localhost:10010");
             client.setRegisteredRedirectUri(uris);
-        }
         if (client == null) {
             throw new NoSuchClientException("No client width requested id: " + clientId);
         }
