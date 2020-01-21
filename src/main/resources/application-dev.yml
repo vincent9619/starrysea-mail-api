@@ -3,6 +3,11 @@ logging:
 server:
   port: 10010
 spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 40MB  #单个文件的最大上限
+      max-request-size: 40MB #单个请求的文件总大小上限
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://120.79.145.235:3306/ss_test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
