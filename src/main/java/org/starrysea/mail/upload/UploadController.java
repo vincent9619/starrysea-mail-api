@@ -28,7 +28,7 @@ public class UploadController {
         try {
             file.transferTo(Paths.get(targetFile.getAbsolutePath()));
             log.info("上传成功");
-            return "上传的文件路径为" + " "+ Paths.get(targetFile.getAbsolutePath());
+            return targetFile.getAbsolutePath();
         } catch (IOException e) {
             log.error(e.toString(), e);
         }
